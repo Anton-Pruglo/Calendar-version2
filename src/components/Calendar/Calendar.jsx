@@ -1,10 +1,11 @@
 import { Month } from "./components/Month";
-import {ThemeContext, ThemeEnum} from "../context";
+import { ThemeEnum } from "../context";
 import classnames from "classnames";
+import {withTheme} from "../HOC/withTheme";
 
 import './Calendar.css';
 
-export const Calendar = () => {
+const Calendar = ({ theme }) => {
   const monthNames = [
     "January",
     "February",
@@ -22,12 +23,11 @@ export const Calendar = () => {
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth();
-  const weekDayNames = ['Mo', 'Tu', 'We', 'Th', 'Fri', 'Sa', 'Su']
+  const weekDayNames = ['Mo', 'Tu', 'We', 'Th', 'Fri', 'Sa', 'Su'];
+
 
   return (
-    <ThemeContext.Consumer>
-      {
-        ({ theme }) => (
+
           <div className={classnames('calendar', {
             'dark': theme === ThemeEnum.DARK})
           }>
@@ -64,9 +64,7 @@ export const Calendar = () => {
               </button>
             </div>
           </div>
-        )
-      }
-    </ThemeContext.Consumer>
-  );
+  )
 }
 
+export default withTheme(Calendar);
