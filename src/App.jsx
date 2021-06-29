@@ -1,13 +1,9 @@
-import React from "react";
-import { Header } from "./components/Header";
+import React from 'react';
+import { Header } from './components/Header';
 import { Calendar } from './components/Calendar';
-import { ThemeEnum, ThemeContext } from "./components/context";
-
-import './App.css';
-
+import { ThemeEnum, ThemeContext } from './components/context';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {

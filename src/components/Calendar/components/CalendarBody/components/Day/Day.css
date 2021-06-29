@@ -8,16 +8,15 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 24px;
-  text-align: center;
 }
 
-.day.today {
+.day.isSameDay {
   background: #7047EB;
   border-radius: 40px;
   color: #FFFFFF;
 }
 
-.day.isSameMonth {
+.day.isOtherMonth {
   opacity: 0.4;
 }
 
